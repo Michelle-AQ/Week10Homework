@@ -1,4 +1,4 @@
-from flask import Flask, Response, request
+from Flask import Flask, Response, request
 
 app = Flask(__name__)
 
@@ -12,6 +12,8 @@ def hello(name):
     <body>
         <h1>Name pages</h1>
         <p>Hello {}</p>
+        
+        <img src="daughter.jpg">
         
     </body>
     </html>
