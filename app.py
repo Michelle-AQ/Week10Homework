@@ -12,6 +12,7 @@ def hello(name):
     <body>
         <h1>Name pages</h1>
         <p>Hello {}</p>
+        
     </body>
     </html>
     """.format(name)
