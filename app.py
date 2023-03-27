@@ -23,6 +23,8 @@ def hello(name):
 @app.route('/about_us')
 def about_us():
     hi_image_url = url_for('static', filename='images/hi.png')
+    ellen_url = url_for('about_me_ellen')
+    michelle_url = url_for('about_me_michelle')
     return """
     <html>
     <head>
@@ -31,10 +33,16 @@ def about_us():
     <body>
         <h1>Michelle & Ellen</h1>
         <p>Noob programmers but working hard to keep up</p>
-        <img src="{}" height='300' width='250' alt="hi">
+        <img src="{}" height='300' width='250' alt="hi"> 
+        <br>
+        
+        <a href= "{}">About me - Ellen</a>     
+        <br>
+        <a href= "{}">About me - Michelle</a>     
+               
     </body>
     </html>
-    """.format(hi_image_url)
+    """.format(hi_image_url, ellen_url, michelle_url)
 
 # code to return a calculation based on a given number
 @app.route('/maths/<int:num>')
@@ -140,8 +148,49 @@ def hello_people(name):
       return redirect(url_for('victoria'))
    elif name == 'ellen':
       return redirect(url_for('about_me_ellen'))
+   elif name == 'michelle':
+       return redirect(url_for('about_me_michelle'))
    else:
       return redirect(url_for('hello_everyone', name = name))
+
+
+# Michelle's About Me Page
+@app.route('/about_me_michelle')
+def about_me_michelle():
+    stylesheet_url = url_for('static', filename='styles/styles2.css')
+    michelle_image_url = url_for('static', filename='images/parispic-mq.jpg')
+    return """
+        <html>
+        <head>
+            <link rel="stylesheet" href="{}">
+            <title>About Me - Michelle</title>
+        </head>
+        <body>
+            <h1>Michelle</h1>
+            <p>I currently work in healthcare and education, but I am also currently a trainee in the exciting world of Software Engineering (with Sky).
+            <br>
+            <br>
+            I currently live in London, UK, where I was born and raised.
+            <br>
+            <br>
+            <img src="{}" height='400' width='350' alt="parispic-mq.jpg">
+            <br>
+            Me in Paris, France.
+            <br>
+            <br>
+            <br>
+            One of my favourite songs!
+            <br>
+            <iframe width="420" height="345" src="https://youtube.com/embed/LQekjdbMC6U">
+</iframe>
+            
+            </p>
+        </body>
+        </html>
+        """.format(stylesheet_url, michelle_image_url)
+
+
+
 
 if __name__=='__main__':
     app.run(debug=True)
