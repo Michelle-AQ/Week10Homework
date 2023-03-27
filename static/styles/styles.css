@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400&display=swap');
+
+/* a nice looking colourscheme from coolors.co */
+/* #CAE7B9 #F3DE8A #EB9486 #7E7F9A #97A7B3 */
+/* tea green, muted buff yellow, muted vivid tangerine, grey/blue rhythm, cadet grey*/
+
+body {
+    font-family: 'Unbounded', cursive;
+    background-color: #CAE7B9;
+    color: #7E7F9A;
+}
+
+h1, h2 {
+    color: #EB9486;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span {
+    font-weight: bold;
+}
+
+.heart {
+    color: #ff0000;
+}
